@@ -1,0 +1,5 @@
+﻿<Solution>
+  <Project Path="src/Instancium.Trust/Instancium.Trust.csproj" />
+  <Project Path="src/Instancium.Trust.Cli/Instancium.Trust.Cli.csproj" />
+  <Project Path="tests/Instancium.Trust.Tests/Instancium.Trust.Tests.csproj" />
+</Solution>
