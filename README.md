@@ -12,7 +12,15 @@ Crypto-agile trust library and offline key ceremony CLI for the Instancium ecosy
 
 ## 1. Why this repository exists
 
-HTTPS protects the transport, not the artifact. A compromised GitHub account, CI runner, or build machine can still serve tampered binaries or documents over a valid URL. `Instancium.Trust` moves trust from the distribution channel to cryptography: detached signatures, a cold-root certificate chain, anti-rollback protection, and out-of-band fingerprint publication under the **Assumed Breach** principle.
+`Instancium.Trust` is a foundational component of the Instancium R&D Lab technology platform and the core implementation of its **Cryptography & Digital Trust** area (defined in the Instancium Doctrine: *Architecture of Digital Autonomy*).
+
+It provides the shared cryptographic trust layer designed to underpin ecosystem products—including **sovereign, self-hosted nodes**, **P2P interaction**, and **decentralized autonomous networks** operating without a single mandatory point of control or external organizational dependency.
+
+At the engineering level, the library moves trust from distribution channels and intermediaries to verifiable mathematics:
+
+* **Channel-independent verification (Assumed Breach):** HTTPS protects transport, not artifacts or state. A compromised GitHub account, CI runner, build host, or relay node can still serve tampered payloads over a valid connection. `Instancium.Trust` establishes verifiable trust through detached signatures, a cold-root certificate chain, anti-rollback enforcement, and out-of-band root fingerprint anchoring.
+* **Sovereign key lifecycle:** Offline ceremonies and memory-hard encrypted key containers (`Argon2id` + `AES-256-GCM`) support secure identity, key backup, and recovery without external cloud dependencies.
+* **Long-term crypto-agility:** Algorithm identifiers are persisted as data across all contracts, preparing the trust layer for post-quantum cryptography (`ml-dsa-65` and hybrid schemes) without breaking existing nodes or verification chains.
 
 ---
 
