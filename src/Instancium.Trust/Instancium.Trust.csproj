@@ -1,12 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Version>1.7.4</Version>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
-  </ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Version>1.7.2</Version>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+
+		<!-- NuGet package metadata -->
+		<IsPackable>true</IsPackable>
+		<PackageId>Instancium.Trust</PackageId>
+		<Authors>Instancium</Authors>
+		<Company>Instancium</Company>
+		<Copyright>Copyright (c) 2026 Instancium</Copyright>
+		<Description>Crypto-agile trust library for the Instancium ecosystem: Ed25519 signing, Argon2id + AES-256-GCM key containers, certificate/manifest chain verification, and anti-rollback protection. Pure managed C# built on BouncyCastle.Cryptography.</Description>
+		<PackageTags>instancium;trust;cryptography;ed25519;argon2id;aes-gcm;pqc;crypto-agility;verification;supply-chain;bouncycastle</PackageTags>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/Instancium/trust</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/Instancium/trust.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<!-- Documentation, deterministic builds, and symbols -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Deterministic>true</Deterministic>
+		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BouncyCastle.Cryptography" Version="2.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 </Project>

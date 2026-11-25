@@ -1,5 +1,8 @@
 # Instancium.Trust
 
+[![NuGet](https://img.shields.io/nuget/v/Instancium.Trust.svg)](https://www.nuget.org/packages/Instancium.Trust)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/Instancium/trust/blob/main/LICENSE.txt)
+
 Crypto-agile trust library and offline key ceremony CLI for the Instancium ecosystem.
 
 > [!WARNING]
@@ -8,19 +11,18 @@ Crypto-agile trust library and offline key ceremony CLI for the Instancium ecosy
 **Solution file:** `Instancium.Trust.slnx` (3 projects: `Instancium.Trust`, `Instancium.Trust.Cli`, `Instancium.Trust.Tests`).
 **Public trust hub:** [https://github.com/Instancium/hub](https://github.com/Instancium/hub)
 
----
 
 ## 1. Why this repository exists
 
 `Instancium.Trust` is a foundational component of the Instancium R&D Lab technology platform and the core implementation of its **Cryptography & Digital Trust** area (defined in the Instancium Doctrine: *Architecture of Digital Autonomy*).
 
-It provides the shared cryptographic trust layer designed to underpin ecosystem products—including **sovereign, self-hosted nodes**, **P2P interaction**, and **decentralized autonomous networks** operating without a single mandatory point of control or external organizational dependency.
+It provides the cryptographic trust layer for **commercial SLA build signing**, **sovereign self-hosted nodes**, and **decentralized autonomous networks** operating without external Certificate Authorities or single points of control.
 
 At the engineering level, the library moves trust from distribution channels and intermediaries to verifiable mathematics:
 
-* **Channel-independent verification (Assumed Breach):** HTTPS protects transport, not artifacts or state. A compromised GitHub account, CI runner, build host, or relay node can still serve tampered payloads over a valid connection. `Instancium.Trust` establishes verifiable trust through detached signatures, a cold-root certificate chain, anti-rollback enforcement, and out-of-band root fingerprint anchoring.
-* **Sovereign key lifecycle:** Offline ceremonies and memory-hard encrypted key containers (`Argon2id` + `AES-256-GCM`) support secure identity, key backup, and recovery without external cloud dependencies.
-* **Long-term crypto-agility:** Algorithm identifiers are persisted as data across all contracts, preparing the trust layer for post-quantum cryptography (`ml-dsa-65` and hybrid schemes) without breaking existing nodes or verification chains.
+* **Verifiable SLA build delivery (Assumed Breach):** HTTPS protects transport, not build artifacts or state. A compromised repository, CI runner, or mirror can still serve tampered binaries over a valid connection. `Instancium.Trust` guarantees build authenticity and integrity through detached signatures, scoped release certificates with bounded validity windows, anti-rollback enforcement, and out-of-band root fingerprint anchoring.
+* **Sovereign key lifecycle:** Offline ceremonies and memory-hard encrypted key containers (`Argon2id` + `AES-256-GCM`) support isolated key management, backup, and recovery without external cloud dependencies.
+* **Long-term crypto-agility:** Algorithm identifiers are persisted as data across all contracts, preparing SLA pipelines and autonomous nodes for post-quantum cryptography (`ml-dsa-65` and hybrid schemes) without breaking existing verification chains.
 
 ---
 
